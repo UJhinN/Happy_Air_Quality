@@ -1,45 +1,100 @@
+# Air Quality Analytics Dashboard
 
-# Amphon
-เว็บแสดงผลข้อมูล และพยากรณ์ฝุ่น pm2.5 
+This is an interactive web application built with Dash and Plotly for monitoring and analyzing air quality metrics. The dashboard provides real-time visualization of various air quality parameters, weather conditions, and predictive analytics.
 
-## tool
-- plotly dash
+## Features
 
-- pycaret
+- **Real-time Air Quality Monitoring**
+  - View current AQI (Air Quality Index) status
+  - Monitor multiple air quality parameters (PM2.5, PM10, O3, NO2)
+  - Track temperature, humidity, and wind speed
 
-## How to install
+- **Interactive Data Visualization**
+  - Line charts, bar charts, and scatter plots
+  - Parameter comparison and correlation analysis
+  - Customizable date range selection
+  - Export data to CSV format
 
-คุณสามารถใช้ git clone ได้เลย
+- **Predictive Analytics**
+  - View future air quality predictions
+  - Analysis of historical trends
+  - Statistical insights and metrics
 
-##  Creation of virtual environments
+## Installation
 
-linux:
-
+1. Clone the repository:
 ```bash
-python3 -m venv virtualenv_name
-```
-activate:
-```bash
-source virtualenv_name/bin/activate
-```
-
-window:
-```bash
-python -m venv virtualenv_name
-```
-activate:
-```bash
-virtualenv_name\Scripts\activate
+git clone https://github.com/UJhinN/Happy_Air_Quality.git
+cd Happy_Air_Quality
 ```
 
-จากนั้นทำการติดตั้ง package
+2. Create and activate a virtual environment (recommended):
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install required packages:
 ```bash
 pip install -r requirements.txt
 ```
 
-## How to run?
+## Required Packages
 
-คุณสามารถกด run ไฟล์ app.py ได้เลย จากนั้นจะปรากฏหน้าต่าง terminal สามารถกดเข้าเว็บได้เลย
+- Flask
+- Dash
+- pandas
+- plotly
+- dash-bootstrap-components
+- numpy
+
+## Usage
+
+1. Run the application:
+```bash
+python app.py
+```
+
+2. Open your web browser and navigate to:
+```
+http://127.0.0.1:8050/
+```
+
+## Dashboard Components
+
+### Analysis Page
+- **Parameter Selection**: Choose from various air quality metrics
+- **Date Range Filter**: Select specific time periods for analysis
+- **Chart Type Selection**: Switch between different visualization types
+- **AQI Display**: Real-time Air Quality Index with status indicator
+- **Weather Information**: Current temperature, humidity, and wind speed
+- **Parameter Comparison**: Correlation analysis between different metrics
+- **Alert System**: Customizable alerts for parameter thresholds
+
+### Prediction Page
+- **Future Trends**: View predicted values for selected parameters
+- **Statistical Analysis**: Track key statistics and variations
+- **Historical Comparison**: Compare predictions with historical data
+
+## Data Format
+
+The application expects data with the following columns:
+- DATETIMEDATA: Timestamp
+- PM25: PM2.5 levels
+- PM10: PM10 levels
+- O3: Ozone levels
+- NO2: Nitrogen dioxide levels
+- Temperature: Temperature in Celsius
+- Humidity: Relative humidity percentage
+- WindSpeed: Wind speed in m/s
+
+## Customization
+
+You can modify the following aspects of the dashboard:
+- Alert thresholds in the `update_alerts` callback
+- AQI calculation parameters in the `calculate_pm25_aqi` function
+- Chart types and visualization options
+- Prediction model parameters
 
 
 ## member
